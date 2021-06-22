@@ -1,0 +1,79 @@
+<span style="color: red; font-weight:bold ;">{{ title }} esta ejecutandose !</span>
+<br />
+
+<!-- cambiar la funcionalidad del componente para cargar archivo -->
+<input type="file" style="display: none ;" #cargador>
+<button (click)="cargador.click()">Cargar archivo</button>
+
+
+<!-- listado de peliculas -->
+ <h2>En cines</h2>
+<app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
+<br />
+<h2>Futuros estrenos</h2>
+<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- otras funcionalidades -->
+
+<!-- <span>{{saludo}}</span> -->
+
+<!-- <div>
+    la suma de 3 mas 2 es :{{2+2}}
+</div> -->
+<!-- <br />
+<span>uevo componente</span>
+<app-empleados></app-empleados>
+<app-empleado></app-empleado> --> 
+<!-- 
+<div *ngIf="!peliculas">
+        <img src="https://s3.amazonaws.com/msc-media-linux-production/5e0ea029945d6.gif"/>
+</div>
+<div *ngIf="peliculas?.length==0">
+    <p>No hay peliculas para mostrar
+
+    </p>
+</div>
+<div *ngIf="peliculas && peliculas.length > 0">
+    <div *ngFor="let pelicul of peliculas ; let index=index" class="pelicula-contenedor">
+        <div>
+      Pelicula {{index}}:  {{pelicul.titulo | lowercase}} <button style="margin: left 1rem;" >Remover</button>
+      </div>
+      <div>
+          {{pelicul.fechaLanzamiento | date:"dd/MM/yy" | uppercase}}
+      </div>
+      <div>
+          {{pelicul.precio |currency}}
+      </div>
+  </div>
+</div>  -->
+
+
+<!-- funcion de proyecccion de contino contenido -->
