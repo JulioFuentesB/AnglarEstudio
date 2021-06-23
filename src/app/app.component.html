@@ -1,17 +1,26 @@
-<span style="color: red; font-weight:bold ;">{{ title }} esta ejecutandose !</span>
+<app-menu>
+
+</app-menu>
+
+<!-- <span style="color: red; font-weight:bold ;">{{ title }} esta ejecutandose !</span> -->
 <br />
 
+<!-- <app-rating [maximoRating]="10"> </app-rating> -->
+<app-rating > </app-rating>
+
+<br>
 <!-- cambiar la funcionalidad del componente para cargar archivo -->
-<input type="file" style="display: none ;" #cargador>
-<button (click)="cargador.click()">Cargar archivo</button>
+<!-- <input type="file" style="display: none ;" #cargador>
+<button (click)="cargador.click()">Cargar archivo</button> -->
 
-
-<!-- listado de peliculas -->
- <h2>En cines</h2>
-<app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
-<br />
-<h2>Futuros estrenos</h2>
-<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+<div class="contenador">
+    <!-- listado de peliculas -->
+    <!-- <h2>En cines</h2>
+    <app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
+    <br />
+    <h2>Futuros estrenos</h2>
+    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas> -->
+</div>
 
 
 
@@ -51,7 +60,7 @@
 <!-- <br />
 <span>uevo componente</span>
 <app-empleados></app-empleados>
-<app-empleado></app-empleado> --> 
+<app-empleado></app-empleado> -->
 <!-- 
 <div *ngIf="!peliculas">
         <img src="https://s3.amazonaws.com/msc-media-linux-production/5e0ea029945d6.gif"/>
