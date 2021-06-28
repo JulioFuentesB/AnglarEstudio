@@ -6,7 +6,7 @@
 <br />
 
 <!-- <app-rating [maximoRating]="10"> </app-rating> -->
-<app-rating > </app-rating>
+<app-rating (rated)="manejarRate($event)"> </app-rating>
 
 <br>
 <!-- cambiar la funcionalidad del componente para cargar archivo -->
@@ -14,12 +14,12 @@
 <button (click)="cargador.click()">Cargar archivo</button> -->
 
 <div class="contenador">
-    <!-- listado de peliculas -->
-    <!-- <h2>En cines</h2>
+    <!--    listado de peliculas  -->
+    <h2>En cines</h2>
     <app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
     <br />
     <h2>Futuros estrenos</h2>
-    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas> -->
+    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
 </div>
 
 
