@@ -6,21 +6,32 @@
 <br />
 
 <!-- <app-rating [maximoRating]="10"> </app-rating> -->
-<app-rating (rated)="manejarRate($event)"> </app-rating>
+<!-- <app-rating (rated)="manejarRate($event)"> </app-rating> -->
 
 <br>
 <!-- cambiar la funcionalidad del componente para cargar archivo -->
 <!-- <input type="file" style="display: none ;" #cargador>
 <button (click)="cargador.click()">Cargar archivo</button> -->
 
-<div class="contenador">
+<!-- <div class="contenador"> -->
     <!--    listado de peliculas  -->
-    <h2>En cines</h2>
+    <!-- <h2>En cines</h2>
     <app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
     <br />
     <h2>Futuros estrenos</h2>
     <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
-</div>
+</div> -->
+
+
+<!-- ciclo de vida -->
+<p>Ciclo de vida</p>
+
+
+
+<!-- <input type="text" (input)="title= $event.target.value" /> -->
+
+<app-ciclo-de-vida [titulo]="title"></app-ciclo-de-vida>
+
 
 
 
@@ -61,7 +72,7 @@
 <span>uevo componente</span>
 <app-empleados></app-empleados>
 <app-empleado></app-empleado> -->
-<!-- 
+<!--
 <div *ngIf="!peliculas">
         <img src="https://s3.amazonaws.com/msc-media-linux-production/5e0ea029945d6.gif"/>
 </div>

@@ -72,11 +72,8 @@ export class AppComponent implements OnInit {
   }
 }
 
-
-
 // export class AppComponent implements OnInit {
 //   ngOnInit(): void {
-
 
 //    this.peliculas = [{
 //       titulo: 'Spider-Man',
@@ -90,16 +87,10 @@ export class AppComponent implements OnInit {
 //     }]
 //   }
 
-
 //   peliculas: { titulo: string; fechaLanzamiento: Date; precio: number; }[] | undefined;
-
-
-
-
 
 //   title = 'Al valor que yo quiera';
 //   ocultar = false;
 //   peliculasEnCines=[];
 
 // }
-
