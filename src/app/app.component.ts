@@ -9,6 +9,10 @@ export class AppComponent implements OnInit {
   title = 'MiPrimeraApp';
   saludo = 'Hola angular como esta?';
 
+  ocultar= false;
+
+
+
   peliculasEnCine:
     | { titulo: string; fechaLanzamiento: Date; precio: number }[]
     | undefined;
