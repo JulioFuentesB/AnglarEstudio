@@ -1,75 +1,46 @@
-
-
 <app-listado-generico [listado]="peliculas">
-<ng-container vacio >
-
+  <!-- <ng-container vacio>
     <div>Mensaje personalizado para contenido <b>Vacio</b> </div>
-</ng-container>
+  </ng-container> -->
 
 
-    <ng-container contenido>
-        <div *ngFor="let pelicul of peliculas ; let index=index" class="pelicula-contenedor">
-            <div>
-                Pelicula {{index}}: {{pelicul.titulo | lowercase}} <button style="margin: left 1rem;"
-                    (click)="remover(index)">Remover</button>
-            </div>
-            <div>
-                {{pelicul.fechaLanzamiento | date:"dd/MM/yy" | uppercase}}
-            </div>
-            <div>
-                {{pelicul.precio |currency}}
-            </div>
+  <ng-container contenido>
+    <div class="peliculas-contenedor">
+      <div *ngFor="let pelicula of peliculas ; let index=index" class="pelicula-contenedor">
+
+        <a>
+          <img [src]="pelicula.poster" alt="Postrer" />
+
+        </a>
+
+
+        <p>
+          <a> {{pelicula.titulo}}</a>
+        </p>
+        <div>
+
+          <a mat-flat-button color="primary">
+            Editar
+          </a>
+          <button mat-flat-button color="warn" type="button">
+            Borrar
+          </button>
         </div>
-    </ng-container>
+
+
+        <!-- <div>
+          Pelicula {{index}}: {{pelicul.titulo | lowercase}} <button style="margin: left 1rem;"
+            (click)="remover(index)">Remover</button>
+        </div>
+        <div>
+          {{pelicul.fechaLanzamiento | date:"dd/MM/yy" | uppercase}}
+        </div>
+        <div>
+          {{pelicul.precio |currency}}
+        </div> -->
+      </div>
+    </div>
+  </ng-container>
 </app-listado-generico>
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- <h2>
-    Datos de la pelicula
-</h2>
-<div>
-    {{pelicula.titulo | uppercase}}
-    {{pelicula.titulo | lowercase}}
-    {{pelicula.precio | currency}}
-</div>
-
-<div>
-    {{pelicula.fechaLanzamiento | date:"dd/MM/yy"}}
-</div>
-<div>
-    {{pelicula.fechaLanzamiento | date:"dd/MM/yy" | uppercase}}
-</div>
-
-<br />
-<br /> -->
-<!-- <div *ngIf="!peliculas">
-        <img src="https://s3.amazonaws.com/msc-media-linux-production/5e0ea029945d6.gif"/>
-</div>
-<div *ngIf="peliculas?.length==0">
-    <p>No hay peliculas para mostrar
-
-    </p>
-</div>
-<ng-container *ngIf="peliculas && peliculas.length > 0">
-    <div *ngFor="let pelicul of peliculas ; let index=index" class="pelicula-contenedor">
-        <div>
-      Pelicula {{index}}:  {{pelicul.titulo | lowercase}} <button style="margin: left 1rem;" (click) ="remover(index)">Remover</button>
-      </div>
-      <div>
-          {{pelicul.fechaLanzamiento | date:"dd/MM/yy" | uppercase}}
-      </div>
-      <div>
-          {{pelicul.precio |currency}}
-      </div>
-  </div>
-</ng-container>  -->
