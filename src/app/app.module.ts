@@ -11,7 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
-import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component'
+import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component'
     ListadoGenericoComponent,
     MenuComponent,
     RatingComponent,
-    CicloDeVidaComponent
+    CicloDeVidaComponent,
+    LandingPageComponent,
+    IndiceGenerosComponent
   ],
   imports: [
     BrowserModule,
