@@ -11,6 +11,15 @@ export class FiltroPeliculasComponent implements OnInit {
 
   form: FormGroup | any;
 
+generos=[
+  {id:1,nombre:"Drama"},
+  {id:2,nombre:"Accion"},
+  {id:3,nombre:"Suspenso"},
+
+
+]
+
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       titulo: '',
@@ -19,4 +28,9 @@ export class FiltroPeliculasComponent implements OnInit {
       enCines: false,
     });
   }
+
+  limpiar(){
+
+  }
+
 }
