@@ -47,4 +47,9 @@ export class FormularioActoresComponent implements OnInit {
          this .form.get('foto').setValue(file);
   }
 
+
+  cambioMarkdown(texto: string){
+    this.form.get('biografia').setValue(texto);
+  }
+
 }
