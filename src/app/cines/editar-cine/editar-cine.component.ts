@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { cineCreacionDTO, cineDTO } from '../cine';
 
 @Component({
   selector: 'app-editar-cine',
@@ -12,11 +13,21 @@ export class EditarCineComponent implements OnInit {
 
   constructor(private rutaActivada:ActivatedRoute) { }
 
-  ngOnInit(): void {
+modelo:cineDTO={nombre:"Sambil"};
 
+
+  ngOnInit(): void {
+//para enrutar con parametros
     this.rutaActivada.params.subscribe(params => {
      // alert(params.id);
     })
   }
+
+  guardarCambios(cine: cineCreacionDTO)
+  {
+console.log(cine);
+
+  }
+
 
 }
