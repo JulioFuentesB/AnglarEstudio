@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +31,28 @@ import { FormulariosGenerosComponent } from './generos/formularios-generos/formu
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component'
-import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component'
+import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
+import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component'
+ // import { MarkdownModule } from 'ngx-markdown';
+
+
+
+//import { CommonModule } from '@angular/common';
+
+// @ngx
+// import { MarkdownModule } from '@ngx-markdown/core';
+
+// // internal
+// import { ExampleComponent } from './example.component';
+
+//import { MarkdownModule } from '@ngx-markdown/core';
+
+// internal
+//import { ExampleComponent } from './example.component';
+
+
+// import {MarkdownModule} from 'ngx-markdown'
+
 
 @NgModule({
   declarations: [
@@ -58,14 +80,34 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
     FiltroPeliculasComponent,
     FormularioActoresComponent,
     InputImgComponent,
-    InputMarkdownComponent
+    InputMarkdownComponent,
+    FormularioCineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule//formularios reactivos parecidos ac#
+    ReactiveFormsModule,//formularios reactivos parecidos ac#
+       //MarkdownModule.forRoot(),
+
+   // internal
+    // MarkdownModule.forRoot({
+    //   // this options are defaults when use forChild().
+    //   options: {
+    //     gfm: true,
+    //     tables: true,
+    //     breaks: true,
+    //     pedantic: false,
+    //     sanitize: false,
+    //     smartLists: true,
+    //     smartypants: false
+    //   },
+    //   // template while loading
+    //   loadingTemplate: `<div> Loading ... </div>`
+    // }) ,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
