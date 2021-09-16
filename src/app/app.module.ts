@@ -9,9 +9,12 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{ ReactiveFormsModule } from'@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+//import { MarkdownModule} from 'ngx-markdown';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import 'leaflet/dist/images/marker-shadow.png';//CORRIGE EL ERROR 404 AL SELECCIONAR MAPA
 
-import {MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
 import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
@@ -30,12 +33,12 @@ import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-peli
 import { FormulariosGenerosComponent } from './generos/formularios-generos/formularios-generos.component';
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
-import { InputImgComponent } from './utilidades/input-img/input-img.component'
+import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
-import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component'
- // import { MarkdownModule } from 'ngx-markdown';
-
-
+import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
+import { MapaComponent } from './utilidades/mapa/mapa.component';
+import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component';
+// import { MarkdownModule } from 'ngx-markdown';
 
 //import { CommonModule } from '@angular/common';
 
@@ -50,9 +53,7 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
 // internal
 //import { ExampleComponent } from './example.component';
 
-
 // import {MarkdownModule} from 'ngx-markdown'
-
 
 @NgModule({
   declarations: [
@@ -81,17 +82,21 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
     FormularioActoresComponent,
     InputImgComponent,
     InputMarkdownComponent,
-    FormularioCineComponent
+    FormularioCineComponent,
+    MapaComponent,
+    FormularioPeliculaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule,//formularios reactivos parecidos ac#
-       //MarkdownModule.forRoot(),
+    ReactiveFormsModule, //formularios reactivos parecidos ac#
+    LeafletModule,
 
-   // internal
+    //MarkdownModule.forRoot(),
+
+    // internal
     // MarkdownModule.forRoot({
     //   // this options are defaults when use forChild().
     //   options: {
@@ -106,10 +111,8 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
     //   // template while loading
     //   loadingTemplate: `<div> Loading ... </div>`
     // }) ,
-
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
