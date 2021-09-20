@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'cines/crear', component: CrearCineComponent },
   { path: 'cines/editar/:id', component: EditarCineComponent },
   { path: 'peliculas/crear', component: CrearPeliculaComponent },
-  { path: 'Peliculas/editar/:id', component: EditarPeliculaComponent },
+  {path: 'peliculas/editar/:id', component: EditarPeliculaComponent},
   { path: 'Peliculas/buscar', component: FiltroPeliculasComponent },
   { path: '**', redirectTo:''  },
 

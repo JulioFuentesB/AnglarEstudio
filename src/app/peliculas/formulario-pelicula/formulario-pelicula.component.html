@@ -30,8 +30,21 @@
 
 
   <h4> Seleccionar poster</h4>
-  <app-input-img (archivoSeleccionado)="archivoSeleccionado($event)" ></app-input-img>
+  <app-input-img
+  [urlImagenActual]="modelo?.poster"
+  (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
   <h5>Resumen elemento no implementado</h5>
+
+  <mat-form-field appearance="fill" >
+    <mat-label>Resumen</mat-label>
+    <textarea formControlName="resumen" matInput ></textarea>
+  </mat-form-field>
+
+  <!-- <mat-form-field appearance="fill"  >
+    <mat-label>{{placeHolderTextarea}}</mat-label>
+    <textarea (input)="inputTextArea($event)" matInput></textarea>
+</mat-form-field> -->
+
 
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">Guardar cambios</button>

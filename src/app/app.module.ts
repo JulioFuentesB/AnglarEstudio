@@ -9,7 +9,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 //import { MarkdownModule} from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import 'leaflet/dist/images/marker-shadow.png';//CORRIGE EL ERROR 404 AL SELECCIONAR MAPA
@@ -85,6 +85,7 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     FormularioCineComponent,
     MapaComponent,
     FormularioPeliculaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -92,6 +93,7 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule, //formularios reactivos parecidos ac#
+    FormsModule,
     LeafletModule,
 
     //MarkdownModule.forRoot(),
