@@ -45,6 +45,12 @@
     <textarea (input)="inputTextArea($event)" matInput></textarea>
 </mat-form-field> -->
 
+<h4>Seleccione los generos</h4>
+
+<app-selector-multiple
+[Seleccionados]="generosSeleccionados"
+[NoSeleccionados]="generosNoSeleccionados" ></app-selector-multiple>
+
 
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">Guardar cambios</button>
