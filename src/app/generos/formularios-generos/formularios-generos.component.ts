@@ -18,7 +18,7 @@ export class FormulariosGenerosComponent implements OnInit {
   modelo: generoCreacionDTO| any;
 
   @Output()
-  submit: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
+  onSubmit: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -45,7 +45,7 @@ export class FormulariosGenerosComponent implements OnInit {
 
     // this.roter.navigate(['/generos']);
 
-    this.submit.emit(this.form.value);
+    this.onSubmit.emit(this.form.value);
   }
   obtenerErrorCampoNombre() {
     var campo = this.form.get('nombre');
