@@ -15,7 +15,10 @@ export class FormulariosGenerosComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
-  modelo: generoCreacionDTO| any;
+  errores: string[] = [];
+
+  @Input()
+  modelo: generoCreacionDTO | any;
 
   @Output()
   onSubmit: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
@@ -28,13 +31,13 @@ export class FormulariosGenerosComponent implements OnInit {
           validators: [
             Validators.required,
             Validators.minLength(3),
-            primeraLetraMayuscula(),
+          //  primeraLetraMayuscula(),
           ],
         },
       ],
     });
 
-    if (this.modelo !== undefined){
+    if (this.modelo !== undefined) {
       this.form.patchValue(this.modelo);
     }
   }
