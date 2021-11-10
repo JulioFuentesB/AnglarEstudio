@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { generoDTO } from '../genero';
 import { GenerosService } from '../generos.service';
 
@@ -12,6 +14,9 @@ export class IndiceGenerosComponent implements OnInit {
 
   generos: generoDTO[] | any;
   columnasAMostrar = ['id', 'nombre', 'acciones'];
+  cantidadTotalRegistros: any;
+  paginaActual = 1;
+  cantidadRegistrosAMostrar = 10;
 
   // ngOnInit(): void {
   //   const generos = this.generosService.obtenerTodos();
@@ -19,12 +24,35 @@ export class IndiceGenerosComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.generosService.obtenerTodos().subscribe(
-      (generos) => {
-        this.generos = generos;
-        console.log(generos);
+
+    this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
+  }
+
+
+
+  cargarRgistros(pagina:number,cantidadElementosAMostrar:number)
+  {
+    this.generosService.obtenerTodos(pagina,cantidadElementosAMostrar).subscribe(
+      (respuesta: HttpResponse<generoDTO[]>) => {
+        this.generos = respuesta.body;
+        console.log(respuesta.headers.get('cantidadTotalRegistros'));
+        this.cantidadTotalRegistros = respuesta.headers.get(
+          'cantidadTotalRegistros'
+        );
       },
       (error) => console.error(error)
     );
+
   }
+
+
+  actualizarPainacion(datos:PageEvent){
+
+    this.paginaActual=datos.pageIndex+1;
+    this.cantidadRegistrosAMostrar=datos.pageSize;
+    this.cargarRgistros(this.paginaActual,this.cantidadRegistrosAMostrar);
+  }
+
+
+
 }
