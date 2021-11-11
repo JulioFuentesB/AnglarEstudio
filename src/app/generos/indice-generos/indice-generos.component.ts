@@ -48,7 +48,7 @@ export class IndiceGenerosComponent implements OnInit {
 
   actualizarPainacion(datos:PageEvent){
 
-    this.paginaActual=datos.pageIndex+1;
+    this.paginaActual=datos.pageIndex + 1;
     this.cantidadRegistrosAMostrar=datos.pageSize;
     this.cargarRgistros(this.paginaActual,this.cantidadRegistrosAMostrar);
   }
