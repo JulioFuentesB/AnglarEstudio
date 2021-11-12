@@ -1,6 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { MatTable } from '@angular/material/table';
 import { generoDTO } from '../genero';
 import { GenerosService } from '../generos.service';
 
@@ -24,35 +25,33 @@ export class IndiceGenerosComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-
     this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
   }
 
-
-
-  cargarRgistros(pagina:number,cantidadElementosAMostrar:number)
-  {
-    this.generosService.obtenerTodos(pagina,cantidadElementosAMostrar).subscribe(
-      (respuesta: HttpResponse<generoDTO[]>) => {
-        this.generos = respuesta.body;
-        console.log(respuesta.headers.get('cantidadTotalRegistros'));
-        this.cantidadTotalRegistros = respuesta.headers.get(
-          'cantidadTotalRegistros'
-        );
-      },
-      (error) => console.error(error)
-    );
-
+  cargarRgistros(pagina: number, cantidadElementosAMostrar: number) {
+    this.generosService
+      .obtenerTodos(pagina, cantidadElementosAMostrar)
+      .subscribe(
+        (respuesta: HttpResponse<generoDTO[]>) => {
+          this.generos = respuesta.body;
+          console.log(respuesta.headers.get('cantidadTotalRegistros'));
+          this.cantidadTotalRegistros = respuesta.headers.get(
+            'cantidadTotalRegistros'
+          );
+        },
+        (error) => console.error(error)
+      );
   }
 
-
-  actualizarPainacion(datos:PageEvent){
-
-    this.paginaActual=datos.pageIndex + 1;
-    this.cantidadRegistrosAMostrar=datos.pageSize;
-    this.cargarRgistros(this.paginaActual,this.cantidadRegistrosAMostrar);
+  actualizarPainacion(datos: PageEvent) {
+    this.paginaActual = datos.pageIndex + 1;
+    this.cantidadRegistrosAMostrar = datos.pageSize;
+    this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
   }
 
-
-
+  borrar(id: number) {
+    this.generosService.borrar(id).subscribe(() => {
+      this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
+    }, error=>console.error(error));
+  }
 }

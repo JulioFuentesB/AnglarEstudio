@@ -15,6 +15,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 //import { MarkdownModule} from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import 'leaflet/dist/images/marker-shadow.png';//CORRIGE EL ERROR 404 AL SELECCIONAR MAPA
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -44,6 +45,7 @@ import { SelectorMultipleComponent } from './utilidades/selector-multiple/select
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 // import { MarkdownModule } from 'ngx-markdown';
+
 
 //import { CommonModule } from '@angular/common';
 
@@ -104,6 +106,9 @@ import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-er
     FormsModule,
     LeafletModule,
     HttpClientModule,
+    SweetAlert2Module.forRoot(),
+    SweetAlert2Module,
+    SweetAlert2Module.forChild({ /* options */ }),
 
     //MarkdownModule.forRoot(),
 
