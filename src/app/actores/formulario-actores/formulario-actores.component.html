@@ -1,3 +1,5 @@
+<app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+
 <form (submit)="onSubmit()" [formGroup]="form">
   <mat-form-field appearance="outline">
     <mat-label>Nombre*</mat-label>
@@ -17,7 +19,15 @@
 
   <app-input-img [urlImagenActual]="modelo?.foto" (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
 
-  <app-input-markdown [placeHolderTextarea]="'Biografía'" (changeMarkdown)="cambioMarkdown($event)"></app-input-markdown>
+  <mat-form-field appearance="outline">
+    <mat-label>biografia</mat-label>
+    <input formControlName="biografia" matInput />
+    <mat-error>El campo Nombre es requerido</mat-error>
+  </mat-form-field><!-- <input formControlName="biografia" matInput /> -->
+
+
+
+  <!-- <app-input-markdown [placeHolderTextarea]="'biografia'" (changeMarkdown)="cambioMarkdown($event)"></app-input-markdown> -->
 
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">

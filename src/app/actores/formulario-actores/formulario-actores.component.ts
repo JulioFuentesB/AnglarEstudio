@@ -20,6 +20,10 @@ export class FormularioActoresComponent implements OnInit {
   @Output()
   submit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
 
+@Input()
+errores:string[] = [];
+
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nombre: [
@@ -29,7 +33,9 @@ export class FormularioActoresComponent implements OnInit {
         },
       ],
       fechaNacimiento: '',
-      foto:''
+      foto:'',
+      biografia:'',
+
     });
 
     if (this.modelo !== undefined && this.modelo) {
@@ -49,6 +55,7 @@ export class FormularioActoresComponent implements OnInit {
 
 
   cambioMarkdown(texto: string){
+    alert("cambio")
     this.form.get('biografia').setValue(texto);
   }
 
