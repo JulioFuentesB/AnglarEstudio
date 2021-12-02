@@ -19,12 +19,12 @@ export class CrearActorComponent implements OnInit {
   errores: string[] = [];
 
   guardarCambios(actor: actorCreacionDTO) {
-    // this.actoresServices.crear(actor).subscribe(
-    //   () => {
-    //     this.router.navigate(['/actores']);
-    //   },
-    //   (error) => (this.errores = parsearErroresAPI(error))
-    // );
+    this.actoresServices.crear(actor).subscribe(
+      () => {
+        this.router.navigate(['/actores']);
+      },
+      (error) => (this.errores = parsearErroresAPI(error))
+    );
     console.log(actor);
   }
 }
