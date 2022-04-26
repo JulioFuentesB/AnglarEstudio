@@ -13,43 +13,45 @@ export class ActoresService {
 
   private apiUrl = environment.apiUrl + 'actores';
 
-  // public obtenerTodos(
-  //   pagina: number,
-  //   cantidadRegistrosAMostrar: number
-  // ): Observable<any> {
-  //   //return [{ id : 1, nombre: 'Drama' }];
+  public obtenerTodos(
+    pagina: number,
+    cantidadRegistrosAMostrar: number
+  ): Observable<any> {
+    //return [{ id : 1, nombre: 'Drama' }];
 
-  //   let params = new HttpParams();
-  //   params = params.append('pagina', pagina.toString());
-  //   params = params.append(
-  //     'recordsPorPagina',
-  //     cantidadRegistrosAMostrar.toString()
-  //   );
-  //   return this.http.get<actorDTO[]>(this.apiUrl, {
-  //     observe: 'response',
-  //     params,
-  //   });
-  // }
+    let params = new HttpParams();
+    params = params.append('pagina', pagina.toString());
+    params = params.append(
+      'recordsPorPagina',
+      cantidadRegistrosAMostrar.toString()
+    );
+    return this.http.get<actorDTO[]>(this.apiUrl, {
+      observe: 'response',
+      params,
+    });
+  }
 
   public crear(actor: actorCreacionDTO) {
+    alert('creacion');
+
     const formData = this.construirFormData(actor);
     return this.http.post(this.apiUrl, formData);
   }
 
-
   private construirFormData(actor: actorCreacionDTO): FormData {
     const formData = new FormData();
     formData.append('nombre', actor.nombre);
-    if (actor.biografia){
+    if (actor.biografia) {
       formData.append('biografia', actor.biografia);
     }
-    if (actor.fechaNacimiento){
+    if (actor.fechaNacimiento) {
       formData.append('fechaNacimiento', formatearFecha(actor.fechaNacimiento));
     }
-    if (actor.foto){
+    if (actor.foto) {
       formData.append('foto', actor.foto);
     }
 
+    debugger;
     return formData;
   }
 
@@ -61,7 +63,7 @@ export class ActoresService {
   //   return this.http.put(`${this.apiUrl}/${id}`, actor);
   // }
 
-  // public borrar(id: number) {
-  //   return this.http.delete(`${this.apiUrl}/${id}`);
-  // }
+  public borrar(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
