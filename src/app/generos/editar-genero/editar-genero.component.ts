@@ -18,11 +18,8 @@ export class EditarGeneroComponent implements OnInit {
 
   //modelo: generoCreacionDTO = {nombre: 'Drama'};
 
-
   modelo: generoCreacionDTO | any;
   errores: string[] = [];
-
-
 
   // ngOnInit(): void {
 
@@ -30,7 +27,6 @@ export class EditarGeneroComponent implements OnInit {
   //    // alert(params.id);
   //   })
   // }
-
 
   ngOnInit(): void {
     this.rutaActivada.params.subscribe((params) => {
@@ -44,14 +40,12 @@ export class EditarGeneroComponent implements OnInit {
   }
 
   guardarCambios(genero: generoCreacionDTO) {
-    this.generosService.editar(this.modelo.id, genero)
-    .subscribe(() => {
-      this.router.navigate(['/generos']);
-    },
-     error => this.errores = parsearErroresAPI(error))
-     //error => console.error(error))
+    this.generosService.editar(this.modelo.id, genero).subscribe(
+      () => {
+        this.router.navigate(['/generos']);
+      },
+      (error) => (this.errores = parsearErroresAPI(error))
+    );
+    //error => console.error(error))
   }
-
-
-
 }

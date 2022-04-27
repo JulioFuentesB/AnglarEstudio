@@ -17,7 +17,9 @@ export class FormularioActoresComponent implements OnInit {
   modelo: actorDTO | any;
 
   @Output()
-  submit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
+  OnSubmit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
+
+  imagenCambiada = false;
 
   @Input()
   errores: string[] = [];
@@ -35,16 +37,31 @@ export class FormularioActoresComponent implements OnInit {
       biografia: '',
     });
 
-    if (this.modelo !== undefined && this.modelo) {
-      this.form.patchValue(this.modelo);
+    // if (this.modelo !== undefined && this.modelo) {
+    //   this.form.patchValue(this.modelo);
+    // }
+
+    if (this.modelo !== undefined){
+      this.form.patchValue(this.modelo)
     }
+
   }
 
   onSubmit() {
-    this.submit.emit(this.form.value);
+    debugger;
+    // if (this.imagenCambiada) {
+    //   this.form.patchValue({ foto: null });
+    // }
+
+    if (!this.imagenCambiada){
+      this.form.patchValue({'foto': null});
+    }
+
+    this.OnSubmit.emit(this.form.value);
   }
 
   archivoSeleccionado(file: Event | any) {
+    this.imagenCambiada = true;
     this.form.get('foto').setValue(file);
   }
 

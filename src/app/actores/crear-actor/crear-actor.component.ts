@@ -19,6 +19,9 @@ export class CrearActorComponent implements OnInit {
   errores: string[] = [];
 
   guardarCambios(actor: actorCreacionDTO) {
+
+    debugger;
+    console.log("crear actor guardar cambios");
     this.actoresServices.crear(actor).subscribe(
       () => {
         this.router.navigate(['/actores']);

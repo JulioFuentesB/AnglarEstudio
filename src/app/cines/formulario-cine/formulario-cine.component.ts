@@ -12,6 +12,8 @@ export class FormularioCineComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   form: FormGroup | any;
+@Input()
+errores: string[] = [];
 
   //parametro de entrada sera el formulario, mejor dicho el modelo
   @Input()
