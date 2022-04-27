@@ -19,11 +19,6 @@ export class IndiceGenerosComponent implements OnInit {
   paginaActual = 1;
   cantidadRegistrosAMostrar = 10;
 
-  // ngOnInit(): void {
-  //   const generos = this.generosService.obtenerTodos();
-  //   console.log(generos);
-  // }
-
   ngOnInit(): void {
     this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
   }
@@ -50,8 +45,11 @@ export class IndiceGenerosComponent implements OnInit {
   }
 
   borrar(id: number) {
-    this.generosService.borrar(id).subscribe(() => {
-      this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
-    }, error=>console.error(error));
+    this.generosService.borrar(id).subscribe(
+      () => {
+        this.cargarRgistros(this.paginaActual, this.cantidadRegistrosAMostrar);
+      },
+      (error) => console.error(error)
+    );
   }
 }

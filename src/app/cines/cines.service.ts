@@ -14,23 +14,23 @@ export class CinesService {
 
   private apiUrl = environment.apiUrl + 'Cines';
 
-  // public obtenerTodos(
-  //   pagina: number,
-  //   cantidadRegistrosAMostrar: number
-  // ): NewType {
-  //   //return [{ id : 1, nombre: 'Drama' }];
+  public obtenerTodos(
+    pagina: number,
+    cantidadRegistrosAMostrar: number
+  ): NewType {
+    //return [{ id : 1, nombre: 'Drama' }];
 
-  //   let params = new HttpParams();
-  //   params = params.append('pagina', pagina.toString());
-  //   params = params.append(
-  //     'recordsPorPagina',
-  //     cantidadRegistrosAMostrar.toString()
-  //   );
-  //   return this.http.get<cineDTO[]>(this.apiUrl, {
-  //     observe: 'response',
-  //     params,
-  //   });
-  // }
+    let params = new HttpParams();
+    params = params.append('pagina', pagina.toString());
+    params = params.append(
+      'recordsPorPagina',
+      cantidadRegistrosAMostrar.toString()
+    );
+    return this.http.get<cineDTO[]>(this.apiUrl, {
+      observe: 'response',
+      params,
+    });
+  }
 
   public crear(genero: cineCreacionDTO) {
     return this.http.post(this.apiUrl, genero);
@@ -44,7 +44,9 @@ export class CinesService {
   //   return this.http.put(`${this.apiUrl}/${id}`, genero);
   // }
 
-  // public borrar(id: number) {
-  //   return this.http.delete(`${this.apiUrl}/${id}`);
-  // }
+  public borrar(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+
 }
