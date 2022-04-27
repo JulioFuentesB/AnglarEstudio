@@ -12,8 +12,8 @@ export class FormularioCineComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   form: FormGroup | any;
-@Input()
-errores: string[] = [];
+  @Input()
+  errores: string[] = [];
 
   //parametro de entrada sera el formulario, mejor dicho el modelo
   @Input()
@@ -23,9 +23,7 @@ errores: string[] = [];
   @Output()
   guardarCambios: EventEmitter<cineCreacionDTO> = new EventEmitter<cineCreacionDTO>();
 
-
-  cordenadaInicial: Coordenada[]=[];
-
+  cordenadaInicial: Coordenada[] = [];
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -40,8 +38,12 @@ errores: string[] = [];
     });
 
     if (this.modelo !== undefined) {
+      debugger;
       this.form.patchValue(this.modelo);
-      this.cordenadaInicial.push( {latitud: this.modelo.latitud , longitud: this.modelo.longitud});
+      this.cordenadaInicial.push({
+        latitud: this.modelo.latitud,
+        longitud: this.modelo.longitud,
+      });
     }
   }
 
