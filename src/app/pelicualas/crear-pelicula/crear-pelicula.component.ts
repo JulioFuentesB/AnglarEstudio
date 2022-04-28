@@ -1,5 +1,8 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { PeliculaCreacionDTO } from 'src/app/peliculas/pelicula';
+import { PeliculasService } from 'src/app/peliculas/peliculas.service';
+import { MultipleSelectorModel } from 'src/app/utilidades/selector-multiple/MultipleSelectorModel';
 
 @Component({
   selector: 'app-crear-pelicula',
@@ -7,11 +10,36 @@ import { PeliculaCreacionDTO } from 'src/app/peliculas/pelicula';
   styleUrls: ['./crear-pelicula.component.css'],
 })
 export class CrearPeliculaComponent implements OnInit {
-  constructor() {}
+  constructor(private peliculasService: PeliculasService) {}
 
-  ngOnInit(): void {}
+  errores: string[] = [];
+  generosNoSeleccionados: MultipleSelectorModel[] | any;
+  cinesNoSeleccionados: MultipleSelectorModel[] | any;
 
-  guardarCmabios(pelicula: PeliculaCreacionDTO) {
+  ngOnInit(): void {
+    this.peliculasService.postGet().subscribe(
+      (resultado) => {
+
+        this.generosNoSeleccionados = resultado.generos.map((genero) => {
+          return <MultipleSelectorModel>{
+            llave: genero.id,
+            valor: genero.nombre,
+          };
+        });
+
+        this.cinesNoSeleccionados = resultado.cines.map((cines) => {
+          return <MultipleSelectorModel>{
+            llave: cines.id,
+            valor: cines.nombre,
+          };
+        });
+
+      },
+      (error) => console.error(error)
+    );
+  }
+
+  guardarCambios(pelicula: PeliculaCreacionDTO) {
     console.log(pelicula);
   }
 }

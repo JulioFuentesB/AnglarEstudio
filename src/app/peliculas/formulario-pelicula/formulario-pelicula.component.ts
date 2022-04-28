@@ -14,27 +14,33 @@ export class FormularioPeliculaComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
+  errores: string[] = [];
+  @Input()
   modelo: PeliculaDTO | any;
 
   @Output()
   OnSubmit: EventEmitter<PeliculaCreacionDTO> = new EventEmitter<PeliculaCreacionDTO>();
 
   //inventados
-  generosNoSeleccionados: MultipleSelectorModel[] = [
-    { llave: 1, valor: 'Drama' },
-    { llave: 2, valor: 'Accion' },
-    { llave: 3, valor: 'Suspenso' },
-    { llave: 4, valor: 'Comedia' },
-  ];
+  @Input()
+  generosNoSeleccionados: MultipleSelectorModel[] | any;
+  //  = [
+  //   { llave: 1, valor: 'Drama' },
+  //   { llave: 2, valor: 'Accion' },
+  //   { llave: 3, valor: 'Suspenso' },
+  //   { llave: 4, valor: 'Comedia' },
+  // ];
 
   generosSeleccionados: MultipleSelectorModel[] = [];
 
-  cinesNoSeleccionados: MultipleSelectorModel[] = [
-    { llave: 1, valor: 'Sambil' },
-    { llave: 2, valor: 'Agora' },
-    { llave: 3, valor: 'Acropolis' },
+  @Input()
+  cinesNoSeleccionados: MultipleSelectorModel[] | any;
+  //  = [
+  //   { llave: 1, valor: 'Sambil' },
+  //   { llave: 2, valor: 'Agora' },
+  //   { llave: 3, valor: 'Acropolis' },
 
-  ];
+  // ];
 
   cinesSeleccionados: MultipleSelectorModel[] = [];
 
