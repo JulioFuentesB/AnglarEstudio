@@ -1,11 +1,9 @@
-<h4>Pruebas</h4>
+<app-mostrar-errores [errores]="errores"></app-mostrar-errores>
 <form (submit)="guardarCambios()" [formGroup]="form">
-
-
   <mat-form-field appearance="outline">
-    <mat-label>Titulo*</mat-label>
+    <mat-label>Título*</mat-label>
     <input formControlName="titulo" matInput />
-    <mat-error>El campo titulo es requerido</mat-error>
+    <mat-error> El campo título es requerido </mat-error>
   </mat-form-field>
 
 
@@ -60,9 +58,9 @@
 
 <h4>Seleccione los actores</h4>
 
-<app-autocomplete-actores></app-autocomplete-actores>
-
-
+<app-autocomplete-actores
+[actoresSeleccionados]="actoresSeleccionados"
+></app-autocomplete-actores>
 
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">Guardar cambios</button>

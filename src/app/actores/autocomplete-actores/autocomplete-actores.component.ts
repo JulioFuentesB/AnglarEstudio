@@ -1,8 +1,10 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatTable } from '@angular/material/table';
+import { actorPeliculaDTO } from '../actor';
+import { ActoresService } from '../actores.service';
 
 @Component({
   selector: 'app-autocomplete-actores',
@@ -10,7 +12,7 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./autocomplete-actores.component.css'],
 })
 export class AutocompleteActoresComponent implements OnInit {
-  constructor() {}
+  constructor(private actoresService: ActoresService) { }
 
   control: FormControl = new FormControl();
 
@@ -32,9 +34,14 @@ export class AutocompleteActoresComponent implements OnInit {
     },
   ];
 
-  actoresOriginal = this.actores;
+  //actoresOriginal = this.actores;
 
-  actoresSeleccionados: any[] = [];
+  //actoresSeleccionados: any[] = [];
+
+  @Input()
+  actoresSeleccionados: actorPeliculaDTO[] = [];
+
+  actoresAMostrar: actorPeliculaDTO[] = [];
 
   columnasAMostrar = ['imagen', 'nombre', 'personaje', 'acciones'];
   //columnasAMostrar = ['imagen'];
@@ -43,15 +50,14 @@ export class AutocompleteActoresComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<any> | any;
 
   ngOnInit(): void {
-    //cada ves que haiga un cambio se dispara el metodo
-    this.control.valueChanges.subscribe((valor) => {
-      this.actores = this.actoresOriginal;
-      this.actores = this.actores.filter(
-        (actor) => actor.nombre.indexOf(valor) !== -1
-      );
+    this.control.valueChanges.subscribe(nombre => {
+      if (typeof nombre === 'string' && nombre){
+        this.actoresService.obtenerPorNombre(nombre).subscribe(actores => {
+          this.actoresAMostrar = actores;
+        })
+      }
     });
   }
-
   optionSelected(event: MatAutocompleteSelectedEvent | any) {
     console.log(event.option.value);
 
