@@ -2,7 +2,7 @@
   <div>
     <h2>{{ pelicula.titulo }} ({{ fechaLanzamiento.getFullYear() }})</h2>
 
-    <!-- <mat-chip-list>
+    <mat-chip-list>
       <mat-chip
         [routerLink]="['/peliculas/buscar']"
         [queryParams]="{ generoId: genero.id }"
@@ -10,7 +10,8 @@
       >
         {{ genero.nombre }}
       </mat-chip>
-    </mat-chip-list> -->
+    </mat-chip-list>
+
     | {{ fechaLanzamiento.toDateString() }} | Promedio: 0.0 | Tu voto: 0.0
 
     <div style="display: flex">
@@ -33,6 +34,7 @@
         <h3>Resumen</h3>
         <div>
             <!-- <markdown [data]="pelicula.resumen" ngPreserveWhitespaces></markdown> -->
+            <!-- <label [data]="pelicula.resumen"></label> -->
         </div>
     </div>
 
@@ -55,7 +57,8 @@
   </div>
   <div style="padding-left: 1rem; position: relative; width: 100%;" *ngIf="coordenadas.length > 0">
     <h2>Mostrándose en los siguientes cines</h2>
-    <!-- <app-mapa [coordenadasIniciales]="coordenadas" [soloLectura]="true"></app-mapa> -->
+    <app-mapa [coordenadasIniciales]="coordenadas" [soloLectura]="true"></app-mapa>
+    <!-- <app-mapa  ></app-mapa> -->
   </div>
 </div>
 

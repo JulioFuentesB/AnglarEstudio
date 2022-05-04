@@ -3,7 +3,6 @@ export interface Coordenada {
   longitud: number;
 }
 // principio de herencia
-export interface CoordenadaConMensaje extends Coordenada {
-
+export interface CoordenadaConMensaje extends Coordenada{
   mensaje: string;
 }
