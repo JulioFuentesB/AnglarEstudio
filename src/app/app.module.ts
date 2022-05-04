@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +9,10 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 //import { MarkdownModule} from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import 'leaflet/dist/images/marker-shadow.png';//CORRIGE EL ERROR 404 AL SELECCIONAR MAPA
+import 'leaflet/dist/images/marker-shadow.png'; //CORRIGE EL ERROR 404 AL SELECCIONAR MAPA
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { MaterialModule } from './material/material.module';
@@ -44,8 +42,8 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
 import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
+import { DetallPeliculaComponent } from './peliculas/detall-pelicula/detall-pelicula.component';
 // import { MarkdownModule } from 'ngx-markdown';
-
 
 //import { CommonModule } from '@angular/common';
 
@@ -95,7 +93,7 @@ import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-er
     SelectorMultipleComponent,
     AutocompleteActoresComponent,
     MostrarErroresComponent,
-
+    DetallPeliculaComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,7 +106,9 @@ import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-er
     HttpClientModule,
     SweetAlert2Module.forRoot(),
     SweetAlert2Module,
-    SweetAlert2Module.forChild({ /* options */ }),
+    SweetAlert2Module.forChild({
+      /* options */
+    }),
 
     //MarkdownModule.forRoot(),
 
