@@ -3,31 +3,24 @@
     <div>Mensaje personalizado para contenido <b>Vacio</b> </div>
   </ng-container> -->
 
-
   <ng-container contenido>
     <div class="peliculas-contenedor">
       <div *ngFor="let pelicula of peliculas ; let index=index" class="pelicula-contenedor">
 
-        <a>
+        <a [routerLink]="'/pelicula/'+ pelicula.id" >
           <img [src]="pelicula.poster" alt="Postrer" />
-
         </a>
-
-
         <p>
-          <a> {{pelicula.titulo}}</a>
+          <a [routerLink]="'/pelicula/'+ pelicula.id" > {{pelicula.titulo}}</a>
         </p>
         <div>
-
-          <a mat-flat-button color="primary">
+          <a mat-flat-button color="primary" [routerLink]="'/peliculas/editar/'+ pelicula.id" >
             Editar
           </a>
           <button mat-flat-button color="warn" type="button">
             Borrar
           </button>
         </div>
-
-
         <!-- <div>
           Pelicula {{index}}: {{pelicul.titulo | lowercase}} <button style="margin: left 1rem;"
             (click)="remover(index)">Remover</button>

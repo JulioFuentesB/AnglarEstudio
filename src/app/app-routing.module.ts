@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'peliculas/crear', component: CrearPeliculaComponent },
   { path: 'peliculas/editar/:id', component: EditarPeliculaComponent },
   { path: 'Peliculas/buscar', component: FiltroPeliculasComponent },
-  { path: 'Peliculas/:id', component: DetallPeliculaComponent },
+  { path: 'pelicula/:id', component: DetallPeliculaComponent },
   { path: '**', redirectTo: '' },
 ];
 
