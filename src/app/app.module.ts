@@ -43,6 +43,7 @@ import { SelectorMultipleComponent } from './utilidades/selector-multiple/select
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 import { DetallPeliculaComponent } from './peliculas/detall-pelicula/detall-pelicula.component';
+import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component';
 // import { MarkdownModule } from 'ngx-markdown';
 
 //import { CommonModule } from '@angular/common';
@@ -94,6 +95,7 @@ import { DetallPeliculaComponent } from './peliculas/detall-pelicula/detall-peli
     AutocompleteActoresComponent,
     MostrarErroresComponent,
     DetallPeliculaComponent,
+    AutorizadoComponent,
   ],
   imports: [
     BrowserModule,
