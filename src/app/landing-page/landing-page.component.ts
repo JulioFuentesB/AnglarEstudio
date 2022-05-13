@@ -27,66 +27,84 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private peliculasService: PeliculasService) {}
 
+  // ngOnInit(): void {
+  //   // setTimeout(() => {
+  //   //   this.peliculasEnCine = [
+  //   //     {
+  //   //       titulo: 'Spider-Man',
+  //   //       fechaLanzamiento: new Date(),
+  //   //       precio: 1490,
+  //   //       poster:
+  //   //         'https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UY720_.jpg',
+  //   //     },
+  //   //     {
+  //   //       titulo: 'Moana',
+  //   //       fechaLanzamiento: new Date('2016-11-14'),
+  //   //       precio: 300,
+  //   //       poster:
+  //   //         'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_.jpg',
+  //   //     },
+  //   //   ];
+  //   // }, 500);
+
+  //   // peliculasEnCIne;
+  //   //this.peliculasProximosEstrenos = [];
+
+  //   // this.peliculasProximosEstrenos = [{
+  //   //   titulo: 'Spider-Man',
+  //   //   fechaLanzamiento: new Date(),
+  //   //   precio: 1490
+
+  //   // },
+  //   // {
+  //   //   titulo: 'Moana',
+  //   //   fechaLanzamiento: new Date('2016-11-14'),
+  //   //   precio: 300
+
+  //   // },
+  //   // {
+  //   //   titulo: 'Piter pan',
+  //   //   fechaLanzamiento: new Date('2016-11-14'),
+  //   //   precio: 300
+
+  //   // },
+  //   // {
+  //   //   titulo: 'Piter pan2',
+  //   //   fechaLanzamiento: new Date('2016-11-14'),
+  //   //   precio: 300
+
+  //   // },
+  //   // {
+  //   //   titulo: 'Piter pan3',
+  //   //   fechaLanzamiento: new Date('2016-11-14'),
+  //   //   precio: 300
+
+  //   // }];
+
+  //   this.peliculasService.obtenerLandingPage().subscribe((landing) => {
+  //     debugger;
+  //     this.peliculasEnCine = landing.enCines;
+  //     this.peliculasProximosEstrenos = landing.proximosEstrenos;
+  //   });
+  // }
+  peliculasEnCine: PeliculaDTO[] | any;
+  peliculasProximosEstrenos: PeliculaDTO[] | any;
+
+
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.peliculasEnCine = [
-    //     {
-    //       titulo: 'Spider-Man',
-    //       fechaLanzamiento: new Date(),
-    //       precio: 1490,
-    //       poster:
-    //         'https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UY720_.jpg',
-    //     },
-    //     {
-    //       titulo: 'Moana',
-    //       fechaLanzamiento: new Date('2016-11-14'),
-    //       precio: 300,
-    //       poster:
-    //         'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_.jpg',
-    //     },
-    //   ];
-    // }, 500);
+    this.cargarDatos();
+  }
 
-    // peliculasEnCIne;
-    //this.peliculasProximosEstrenos = [];
-
-    // this.peliculasProximosEstrenos = [{
-    //   titulo: 'Spider-Man',
-    //   fechaLanzamiento: new Date(),
-    //   precio: 1490
-
-    // },
-    // {
-    //   titulo: 'Moana',
-    //   fechaLanzamiento: new Date('2016-11-14'),
-    //   precio: 300
-
-    // },
-    // {
-    //   titulo: 'Piter pan',
-    //   fechaLanzamiento: new Date('2016-11-14'),
-    //   precio: 300
-
-    // },
-    // {
-    //   titulo: 'Piter pan2',
-    //   fechaLanzamiento: new Date('2016-11-14'),
-    //   precio: 300
-
-    // },
-    // {
-    //   titulo: 'Piter pan3',
-    //   fechaLanzamiento: new Date('2016-11-14'),
-    //   precio: 300
-
-    // }];
-
-    this.peliculasService.obtenerLandingPage().subscribe((landing) => {
-      debugger;
-      this.peliculasEnCine = landing.enCines;
-      this.peliculasProximosEstrenos = landing.proximosEstrenos;
+  cargarDatos(){
+    debugger;
+    this.peliculasService.obtenerLandingPage().subscribe(landingPage => {
+      this.peliculasEnCine = landingPage.enCines;
+      this.peliculasProximosEstrenos = landingPage.proximosEstrenos;
     });
   }
-  peliculasEnCine: PeliculaDTO | any;
-  peliculasProximosEstrenos: PeliculaDTO | any;
+
+  borrado(){
+    debugger;
+    this.cargarDatos();
+  }
 }

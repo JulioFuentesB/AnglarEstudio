@@ -22,9 +22,7 @@ export class FormularioPeliculaComponent implements OnInit {
   modelo: PeliculaDTO | any;
 
   @Output()
-  OnSubmit: EventEmitter<PeliculaCreacionDTO> = new EventEmitter<
-    PeliculaCreacionDTO
-  >();
+  OnSubmit: EventEmitter<PeliculaCreacionDTO> = new EventEmitter<PeliculaCreacionDTO>();
 
   //inventados
   @Input()
@@ -34,7 +32,6 @@ export class FormularioPeliculaComponent implements OnInit {
 
   @Input()
   cinesNoSeleccionados: MultipleSelectorModel[] | any;
-
   @Input()
   cinesSeleccionados: MultipleSelectorModel[] = [];
 
@@ -58,7 +55,7 @@ export class FormularioPeliculaComponent implements OnInit {
       poster: '',
       generosIds: '',
       cinesIds: '',
-      actores: ''
+      actores: '',
     });
 
     if (this.modelo !== undefined) {
@@ -70,7 +67,6 @@ export class FormularioPeliculaComponent implements OnInit {
     this.form.get('poster').setValue(archivo);
     this.imagenCambiada = true;
   }
-
 
   // changeMarkdown(texto) {
   //   this.form.get('resumen').setValue(texto);

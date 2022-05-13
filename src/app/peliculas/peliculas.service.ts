@@ -36,7 +36,7 @@ export class PeliculasService {
 
   public crear(pelicula: PeliculaCreacionDTO): Observable<number>{
     const formData = this.ConstruirFormData(pelicula);
-    debugger;
+
     return this.http.post<number>(this.apiURL, formData);
   }
 
