@@ -1,7 +1,18 @@
-mat-toolbar{
-    position: sticky; /*//cuando se mueve hacia abajo no se pierda laa barra del menu */
-    position: -webkit-sticky;/*funcione en zafari*/
-    top :0;/*Se coloque ariba*/
-    z-index: 1000;/*Se coloque encima da otros objetos*/
+mat-toolbar {
+  position: sticky;
+  /*//cuando se mueve hacia abajo no se pierda laa barra del menu */
+  position: -webkit-sticky;
+  /*funcione en zafari*/
+  top: 0;
+  /*Se coloque ariba*/
+  z-index: 1000;
+  /*Se coloque encima da otros objetos*/
 }
+
 /* @import 'https://fonts.googleapis.com/icon?family=Material+Icons'; */
+
+
+app-autorizado {
+
+  display: flex;
+}

@@ -44,6 +44,7 @@ import { AutocompleteActoresComponent } from './actores/autocomplete-actores/aut
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 import { DetallPeliculaComponent } from './peliculas/detall-pelicula/detall-pelicula.component';
 import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component';
+import { LoginComponent } from './seguridad/login/login.component';
 // import { MarkdownModule } from 'ngx-markdown';
 
 //import { CommonModule } from '@angular/common';
@@ -96,6 +97,7 @@ import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component
     MostrarErroresComponent,
     DetallPeliculaComponent,
     AutorizadoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
