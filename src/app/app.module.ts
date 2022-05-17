@@ -45,6 +45,8 @@ import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-er
 import { DetallPeliculaComponent } from './peliculas/detall-pelicula/detall-pelicula.component';
 import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component';
 import { LoginComponent } from './seguridad/login/login.component';
+import { RegistroComponent } from './seguridad/registro/registro.component';
+import { FormularioAutenticacionComponent } from './seguridad/formulario-autenticacion/formulario-autenticacion.component';
 // import { MarkdownModule } from 'ngx-markdown';
 
 //import { CommonModule } from '@angular/common';
@@ -98,6 +100,8 @@ import { LoginComponent } from './seguridad/login/login.component';
     DetallPeliculaComponent,
     AutorizadoComponent,
     LoginComponent,
+    RegistroComponent,
+    FormularioAutenticacionComponent,
   ],
   imports: [
     BrowserModule,
