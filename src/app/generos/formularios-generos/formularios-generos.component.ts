@@ -25,29 +25,19 @@ export class FormulariosGenerosComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      nombre: [
-        '',
-        {
-          validators: [
-            Validators.required,
-            Validators.minLength(3),
-          //  primeraLetraMayuscula(),
-          ],
-        },
-      ],
+      nombre: ['', {
+        validators: [Validators.required, Validators.minLength(3), primeraLetraMayuscula()]
+      }]
     });
 
-    if (this.modelo !== undefined) {
+    if (this.modelo !== undefined){
       this.form.patchValue(this.modelo);
     }
   }
 
+
   //envia data al componente padre
   guardarCambios() {
-    //..guaradar los cambios
-
-    // this.roter.navigate(['/generos']);
-
     this.onSubmit.emit(this.form.value);
   }
   obtenerErrorCampoNombre() {

@@ -18,15 +18,22 @@ export class SeguridadService {
   private readonly llaveExpiracion = 'token-expiracion';
   private readonly campoRol = 'role';
 
-
-  hacerAdmin(usuarioId: string){
+  hacerAdmin(usuarioId: string) {
     const headers = new HttpHeaders('Content-Type: application/json');
-    return this.httpClient.post(`${this.apiURL}/hacerAdmin`, JSON.stringify(usuarioId), {headers});
+    return this.httpClient.post(
+      `${this.apiURL}/hacerAdmin`,
+      JSON.stringify(usuarioId),
+      { headers }
+    );
   }
 
-  removerAdmin(usuarioId: string){
+  removerAdmin(usuarioId: string) {
     const headers = new HttpHeaders('Content-Type: application/json');
-    return this.httpClient.post(`${this.apiURL}/removerAdmin`, JSON.stringify(usuarioId), {headers});
+    return this.httpClient.post(
+      `${this.apiURL}/removerAdmin`,
+      JSON.stringify(usuarioId),
+      { headers }
+    );
   }
 
   estaLogueado(): boolean {
@@ -48,12 +55,14 @@ export class SeguridadService {
   }
 
   obtenerRol(): string {
-    return 'admin11';
+    return this.obtenerCampoJWT(this.campoRol);
   }
 
-  obtenerCampoJWT(campo: string): string{
+  obtenerCampoJWT(campo: string): string {
     const token = localStorage.getItem(this.llaveToken);
-    if (!token){return '';}
+    if (!token) {
+      return '';
+    }
     var dataToken = JSON.parse(atob(token.split('.')[1]));
     return dataToken[campo];
   }

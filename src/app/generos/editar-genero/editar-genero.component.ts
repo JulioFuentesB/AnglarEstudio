@@ -40,6 +40,7 @@ export class EditarGeneroComponent implements OnInit {
   }
 
   guardarCambios(genero: generoCreacionDTO) {
+    debugger;
     this.generosService.editar(this.modelo.id, genero).subscribe(
       () => {
         this.router.navigate(['/generos']);
