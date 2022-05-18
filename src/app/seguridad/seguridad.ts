@@ -1,12 +1,13 @@
-export interface credencialesUsuario {
+export interface credencialesUsuario{
   email: string;
   password: string;
 }
 
 export interface respuestaAutenticacion {
   token: string;
-  expires: Date;
+  expiracion: Date;
 }
+
 export interface usuarioDTO{
   id: string;
   email: string;

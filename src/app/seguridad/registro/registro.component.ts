@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 import { credencialesUsuario } from '../seguridad';
 import { SeguridadService } from '../seguridad.service';
@@ -9,7 +10,7 @@ import { SeguridadService } from '../seguridad.service';
   styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent implements OnInit {
-  constructor(private seguridadService: SeguridadService) {}
+  constructor(private seguridadService: SeguridadService, private  router:Router) {}
 
   errores: string[] = [];
 
@@ -19,6 +20,8 @@ export class RegistroComponent implements OnInit {
     this.seguridadService.registrar(credenciales).subscribe(
       (respuesta) => {
         console.log(respuesta);
+        this.seguridadService.guardarToken(respuesta);
+        this.router.navigate(['/']);
       },
       (errores) => (this.errores = parsearErroresAPI(errores))
     );
