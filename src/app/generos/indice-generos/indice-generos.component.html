@@ -2,7 +2,6 @@
 
 <button mat-flat-button color="primary" routerLink="/generos/crear">Crear nuevo</button>
 
-
 <app-listado-generico [listado]="generos">
   <ng-container contenido>
     <table #table mat-table [dataSource]="generos" class="mat-elevation-z8 tabla-indice">
@@ -23,13 +22,10 @@
           <button mat-flat-button color="warn" [swal]="{title: 'Confirmación',
           text: '¿Está seguro que desea borrar el registro?',
           showCancelButton: true}" (confirm)="borrar(element.id)">Borrar</button>
-
           <!--
           <button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
             Do it!
           </button> -->
-
-
         </td>
       </ng-container>
 
@@ -41,8 +37,5 @@
       [pageSize]="cantidadRegistrosAMostrar" class="mat-elevation-z8" (page)="actualizarPainacion($event)">
 
     </mat-paginator>
-
-
   </ng-container>
-
 </app-listado-generico>

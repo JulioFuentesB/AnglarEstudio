@@ -48,6 +48,7 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { RegistroComponent } from './seguridad/registro/registro.component';
 import { FormularioAutenticacionComponent } from './seguridad/formulario-autenticacion/formulario-autenticacion.component';
 import { SeguridadInterceptorService } from './seguridad/seguridad-interceptor.service';
+import { IndiceUsuariosComponent } from './seguridad/indice-usuarios/indice-usuarios.component';
 // import { MarkdownModule } from 'ngx-markdown';
 
 //import { CommonModule } from '@angular/common';
@@ -103,6 +104,7 @@ import { SeguridadInterceptorService } from './seguridad/seguridad-interceptor.s
     LoginComponent,
     RegistroComponent,
     FormularioAutenticacionComponent,
+    IndiceUsuariosComponent,
   ],
   imports: [
     BrowserModule,
